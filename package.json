@@ -1,23 +1,23 @@
 {
-  "name": "animeagenda",
+  "name": "anime_manager",
   "version": "1.0.0",
-  "description": "Aplicacion prueba",
+  "description": "Manejo de avisos segun series en emision",
   "main": "main.js",
-  "scripts": {
-    "start": "electron main.js"
-  },
-  "author": "Joseph Scafidi",
-  "license": "SEE LICENSE IN https://opensource.org/licenses/ISC",
   "dependencies": {
     "electron": "^1.7.10"
   },
   "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JScafidi616/ProjectAM.git"
   },
-  "keywords": [
-    "FirstProyect"
-  ],
-  "homepage": "https://bitbucket.org/JScafidi616/anime_agenda#readme"
+  "author": "Joseph Scafidi",
+  "license": "ISC ",
+  "bugs": {
+    "url": "https://github.com/JScafidi616/ProjectAM/issues"
+  },
+  "homepage": "https://github.com/JScafidi616/ProjectAM#readme"
 }
