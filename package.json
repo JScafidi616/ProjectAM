@@ -1,0 +1,23 @@
+{
+  "name": "animeagenda",
+  "version": "1.0.0",
+  "description": "Aplicacion prueba",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "Joseph Scafidi",
+  "license": "SEE LICENSE IN https://opensource.org/licenses/ISC",
+  "dependencies": {
+    "electron": "^1.7.10"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JScafidi616/ProjectAM.git"
+  },
+  "keywords": [
+    "FirstProyect"
+  ],
+  "homepage": "https://bitbucket.org/JScafidi616/anime_agenda#readme"
+}

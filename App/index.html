@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../SRC/stylesheets/main.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="showMenu" onclick="clickEvent()">&#9776;</a>
+  <a href="#" class="menuOPtions">&#9899; Fechas</a>
+  <a href="#" class="menuOPtions">&#9899; En Emision</a>
+  <a href="#" class="menuOPtions">&#9899; Mis animes</a>
+  <a href="#" class="menuOPtions">&#9899; Ajustes</a>
+</div>
+
+<div id="main">
+  <h2>Welcome ma brudah</h2>
+  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+
+</div>
+
+<script>
+function clickEvent(){
+  if(document.getElementsByClassName("showMenu").value == 0){
+    closeNav()
+    document.getElementsByClassName("showMenu").value= 1;
+  }else{
+    openNav()
+    document.getElementsByClassName("showMenu").value = 0;
+  }
+}
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "60px";
+  document.getElementById("main").style.marginLeft= "60px";
+}
+</script>
+     
+</body>
+</html> 
