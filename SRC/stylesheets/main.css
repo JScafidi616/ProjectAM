@@ -2,6 +2,14 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #424242;
+    color: #c7c7c7;
+}
+
+/*menu de navegacion derecha*/
 .sidenav {
     height: 100%;
     width: 60px;
@@ -12,7 +20,7 @@ body {
     background-color: #111;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    /* padding-top: 60px; */
 }
 
 .sidenav a {
@@ -29,27 +37,75 @@ body {
 }
 
 .sidenav .showMenu {
-    position: absolute;
+    /* position: absolute; */
     top: 0px;
     right: 1px;
     font-size: 30px;
     color: rgb(50, 106, 134);
     background-color: rgb(45, 45, 45);
-    padding: 5px 15px 5px 210px;
+    padding: 5px 20px 5px 20px;
 }
 
 .sidenav .menuOPtions {
     color: rgb(185, 185, 185);
     margin: 5px;
-    padding: 15px 0px 15px 10px;
+    width: 200px;
+    padding: 15px 20px 15px 20px;
     display: table-caption;
 }
 
-
 #main {
     transition: margin-left .5s;
-    padding: 16px;
     margin-left: 60px;
+}
+
+#content {
+    padding: 16px;
+}
+
+#title-bar {
+    -webkit-app-region: drag;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    background-color: #03a9f4;
+    padding: none;
+    margin: 0 auto;
+    position: relative;
+}
+
+#title-bar-btns {
+    -webkit-app-region: no-drag;
+    position: fixed;
+    top: 0px;
+    right: 6px;
+}
+
+#min-btn, #max-btn, #close-btn {
+    background-color: #03a9f4;
+    position: relative;
+    float: left;
+    border: none;
+    right: 8px;
+    left: 6px;
+    color: white;
+    padding: 8px 18px 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#min-btn:hover, #max-btn:hover{
+    background-color: rgb(76, 188, 239);
+    color: white;
+    transition: 0.5s;
+}
+#close-btn:hover {
+    background-color: rgb(214, 64, 64); /* Green */
+    color: white;
+    transition: 0.5s;
 }
 
 @media screen and (max-height: 450px) {
