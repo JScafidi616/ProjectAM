@@ -8,9 +8,9 @@
 
     <div id="title-bar">
         <div id="title-bar-btns">
-              <button id="min-btn">-</button>
-              <button id="max-btn">+</button>
-              <button id="close-btn">x</button>
+              <button id="min-btn">▁</button>
+              <button id="max-btn">&#9744;</button>
+              <button id="close-btn">✖</button>
         </div>
   </div>
 
@@ -30,6 +30,49 @@
 </div>
 
 <script>
+//Immediately-Invoked Function Expression (IIFE)
+//Funcion que es ejecutada inmediatamente (function(){ **codigo js** })();
+(function () {
+    // Retrieve remote BrowserWindow
+    const {BrowserWindow} = require('electron').remote
+
+    function init() {
+        // Minimize task
+        document.getElementById("min-btn").addEventListener("click", (e) => {
+        var window = BrowserWindow.getFocusedWindow();
+        window.minimize();
+        });
+
+          // Maximize window
+        document.getElementById("max-btn").addEventListener("click", (e) => {
+        var window = BrowserWindow.getFocusedWindow();
+        var iconReplace = document.getElementById("max-btn"); //obtiene elemento de iconos
+        if(window.isMaximized()){
+            //carga icono al ser minimizado
+            iconReplace.firstChild.data = '☐';
+            window.unmaximize();
+        }else{
+                //carga icono al ser maximizado
+                iconReplace.firstChild.data = "❐";
+                window.maximize();
+            }
+        });
+
+          // Close app
+        document.getElementById("close-btn").addEventListener("click", (e) => {
+            var window = BrowserWindow.getFocusedWindow();
+            window.close();
+        });
+    };
+
+    document.onreadystatechange =  () => {
+        if (document.readyState == "complete") {
+            init();
+        }
+    };
+})();
+
+//Control de eventos menu vertical
 function clickEvent(){
   if(document.getElementsByClassName("clickEventMenu").value == 0){
     closeNav()
@@ -60,43 +103,6 @@ function closeNav() {
   //document.getElementById("textMenu").style.display = "none";
 }
 </script>
-
-<script>
-  (function () {
-      // Retrieve remote BrowserWindow
-      const {BrowserWindow} = require('electron').remote
-
-      function init() {
-          // Minimize task
-          document.getElementById("min-btn").addEventListener("click", (e) => {
-              var window = BrowserWindow.getFocusedWindow();
-              window.minimize();
-          });
-
-          // Maximize window
-          document.getElementById("max-btn").addEventListener("click", (e) => {
-              var window = BrowserWindow.getFocusedWindow();
-              if(window.isMaximized()){
-                  window.unmaximize();
-              }else{
-                  window.maximize();
-              }
-          });
-
-          // Close app
-          document.getElementById("close-btn").addEventListener("click", (e) => {
-              var window = BrowserWindow.getFocusedWindow();
-              window.close();
-          });
-      };
-
-      document.onreadystatechange =  () => {
-          if (document.readyState == "complete") {
-              init();
-          }
-      };
-  })();
-  </script>
 
 </body>
 </html> 
