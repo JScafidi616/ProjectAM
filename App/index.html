@@ -15,11 +15,11 @@
   </div>
 
   <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="showMenu" onclick="clickEvent()">&#9776;</a>
-      <a href="#" class="menuOPtions">&#9899; Fechas</a>
-      <a href="#" class="menuOPtions">&#9899; En Emision</a>
-      <a href="#" class="menuOPtions">&#9899; Mis animes</a>
-      <a href="#" class="menuOPtions">&#9899; Ajustes</a>
+      <a href="javascript:void(0)" class="clickEventMenu" onclick="clickEvent()">&#9776;</a>
+      <a href="#" class="menuOPtions">&#9899; <p id="textMenu">Fechas</p></a>
+      <a href="#" class="menuOPtions">&#9899; <p id="textMenu">En Emision</p></a>
+      <a href="#" class="menuOPtions">&#9899; <p id="textMenu">Mis animes</p></a>
+      <a href="#" class="menuOPtions">&#9899; <p id="textMenu">Ajustes</p></a>
   </div>
 
 <div id="main">
@@ -31,23 +31,33 @@
 
 <script>
 function clickEvent(){
-  if(document.getElementsByClassName("showMenu").value == 0){
+  if(document.getElementsByClassName("clickEventMenu").value == 0){
     closeNav()
-    document.getElementsByClassName("showMenu").value= 1;
+    document.getElementsByClassName("clickEventMenu").value= 1;
   }else{
     openNav()
-    document.getElementsByClassName("showMenu").value = 0;
+    document.getElementsByClassName("clickEventMenu").value = 0;
   }
 }
-
+//cambia estado de la barra para expandir contenido
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
+  var textM = document.querySelectorAll("#textMenu");
+  /*for(i=0; i<textM.length; i++){
+    textM[i].style.display = "block";
+  }*/
+  //document.getElementById("textMenu").style.display = "block";
 }
-
+//cambia estado de la barra para esconder contenido
 function closeNav() {
   document.getElementById("mySidenav").style.width = "60px";
   document.getElementById("main").style.marginLeft= "60px";
+  /*var textM = document.querySelectorAll("#textMenu");
+  for(i=0; i<textM.length; i++){
+    textM[i].style.display = "none";
+  }*/
+  //document.getElementById("textMenu").style.display = "none";
 }
 </script>
 
