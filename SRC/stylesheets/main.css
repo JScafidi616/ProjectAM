@@ -31,6 +31,7 @@ body {
     color: #818181;
     display: block;
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 .sidenav a:hover {
@@ -47,12 +48,34 @@ body {
     padding: 5px 17px 5px 15px;
 }
 
-.sidenav .menuOPtions {
+.sidenav .clickEventMenu {
     color: rgb(185, 185, 185);
-    margin: 5px;
+    /*margin: 5px;*/
     width: 200px;
     padding: 15px 20px 15px 20px;
     display: table-caption;
+}
+
+a.menuOPtions {
+    color: rgb(185, 185, 185);
+    margin: 0 0 0 0;
+    min-width: 120px;
+    padding: 15px 32px 15px 15px;
+    display: table-caption;
+    float: left;
+}
+
+a #textMenu {
+    color: rgb(185, 185, 185);
+    margin: 0 0 0 0;
+    transition: ease-out 0.5s;
+    float: right;
+    position: relative;
+    top: 5px;
+    left: 15px;
+    /*display: none;*/
+    width: 90px;
+    white-space: nowrap;
 }
 
 #main {
