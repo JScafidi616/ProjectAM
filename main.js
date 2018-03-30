@@ -14,9 +14,9 @@ function createWindow(){
         protocol: 'file',
         slashes: true
     }))
-    //win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
-    console.log("mensaje de consola");
+    console.log("Log console: Corriendo aplicacion");
 }
 
 app.on('ready', createWindow)

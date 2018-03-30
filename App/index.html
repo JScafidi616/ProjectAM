@@ -3,14 +3,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../SRC/stylesheets/main.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../SRC/stylesheets/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="../SRC/stylesheets/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 </head>
-
-<body>
-
+<!-- evita que arrastre elementos seleccionados de la interfaz -->
+<body ondragstart="return false;" ondrop="return false;">
+<!--
   <div id="mySidenav" class="sidenav">
-      <!-- <a href="javascript:void(0)" class="showMenu" onclick="clickEvent()">&#9776;</a> -->
+      <a href="javascript:void(0)" class="showMenu" onclick="clickEvent()">&#9776;</a>
       <a href="#" class="menuOPtions" ><i class="far fa-calendar-alt"></i></a>
       <a href="#" class="menuOPtions" ><i class="fas fa-sync-alt"></i></a>
       <a href="#" class="menuOPtions" ><i class="fas fa-sliders-h"></i></a>
@@ -19,80 +19,102 @@
 
 <div id="main">
 
-  <!-- <div id="title-bar">
+  <div id="title-bar">
         <div id="title-bar-btns">
-              <button id="min-btn">-</button>
-              <button id="max-btn">+</button>
-              <button id="close-btn">x</button>
+              <button id="min-btn">▁</button>
+              <button id="max-btn">&#9744;</button>
+              <button id="close-btn">✖</button>
         </div>
-  </div> -->
+  </div> 
+-->
 
+<div id="mySidenav" class="sidenav">
+  <div class="MenuBG"><a href="javascript:void(0)" class="clickEventMenu" onclick="clickEvent()">&#9776;</a></div>
+  <div class="btnMenuEffect"><a href="#" class="menuOPtions"><i class="far fa-calendar-alt"></i><p id="textMenu">Fechas</p></a></div>
+  <div class="btnMenuEffect"><a href="#" class="menuOPtions"><i class="fas fa-sync-alt"></i><p id="textMenu">En Emision</p></a></div>
+  <div class="btnMenuEffect"><a href="#" class="menuOPtions"><i class="fas fa-sliders-h"></i> <p id="textMenu">Mis animes</p></a></div>
+  <div class="btnMenuEffect"><a href="#" class="menuOPtions"><i class="fas fa-cogs"></i><p id="textMenu">Ajustes</p></a></div>
+</div>
+
+<div id="main">
   <div id="content">
       <h2>Inicio</h2>
       <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
   </div>
-  
-
 </div>
 
 <script>
+//Immediately-Invoked Function Expression (IIFE)
+//Funcion que es ejecutada inmediatamente (function(){ **codigo js** })();
+/*
+(function () {
+    // Retrieve remote BrowserWindow
+    const {BrowserWindow} = require('electron').remote
+    function init() {
+        // Minimize task
+        document.getElementById("min-btn").addEventListener("click", (e) => {
+        var window = BrowserWindow.getFocusedWindow();
+        window.minimize();
+        });
+          // Maximize window
+        document.getElementById("max-btn").addEventListener("click", (e) => {
+        var window = BrowserWindow.getFocusedWindow();
+        var iconReplace = document.getElementById("max-btn"); //obtiene elemento de iconos
+        if(window.isMaximized()){
+            //carga icono al ser minimizado
+            iconReplace.firstChild.data = '☐';
+            window.unmaximize();
+        }else{
+                //carga icono al ser maximizado
+                iconReplace.firstChild.data = "❐";
+                window.maximize();
+            }
+        });
+          // Close app
+        document.getElementById("close-btn").addEventListener("click", (e) => {
+            var window = BrowserWindow.getFocusedWindow();
+            window.close();
+        });
+    };
+    document.onreadystatechange =  () => {
+        if (document.readyState == "complete") {
+            init();
+        }
+    };
+})();
+*/
+//Control de eventos menu vertical
 function clickEvent(){
-  if(document.getElementsByClassName("showMenu").value == 0){
+  if(document.getElementsByClassName("clickEventMenu").value == 0){
     closeNav()
-    document.getElementsByClassName("showMenu").value= 1;
+    document.getElementsByClassName("clickEventMenu").value= 1;
   }else{
     openNav()
-    document.getElementsByClassName("showMenu").value = 0;
+    document.getElementsByClassName("clickEventMenu").value = 0;
   }
 }
-
+//cambia estado de la barra para expandir contenido
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
+  var textM = document.querySelectorAll("#textMenu");
+  for(i=0; i<textM.length; i++){
+    textM[i].style.transition = "all 2s";  
+    textM[i].style.opacity = "1";
+  }
+  //document.getElementById("textMenu").style.display = "block";
 }
-
+//cambia estado de la barra para esconder contenido
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "80px";
-  document.getElementById("main").style.marginLeft= "80px";
+  document.getElementById("mySidenav").style.width = "60px";
+  document.getElementById("main").style.marginLeft= "60px";
+  var textM = document.querySelectorAll("#textMenu");
+  for(i=0; i<textM.length; i++){
+    textM[i].style.transition = "all 2s";  
+    textM[i].style.opacity = "0";
+  }
 }
 </script>
-
-<script>
-  (function () {
-      // Retrieve remote BrowserWindow
-      const {BrowserWindow} = require('electron').remote
-
-      function init() {
-          // Minimize task
-          document.getElementById("min-btn").addEventListener("click", (e) => {
-              var window = BrowserWindow.getFocusedWindow();
-              window.minimize();
-          });
-
-          // Maximize window
-          document.getElementById("max-btn").addEventListener("click", (e) => {
-              var window = BrowserWindow.getFocusedWindow();
-              if(window.isMaximized()){
-                  window.unmaximize();
-              }else{
-                  window.maximize();
-              }
-          });
-
-          // Close app
-          document.getElementById("close-btn").addEventListener("click", (e) => {
-              var window = BrowserWindow.getFocusedWindow();
-              window.close();
-          });
-      };
-
-      document.onreadystatechange =  () => {
-          if (document.readyState == "complete") {
-              init();
-          }
-      };
-  })();
-  </script>
 
 </body>
 </html> 

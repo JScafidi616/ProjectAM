@@ -1,29 +1,9 @@
-# ProjectAM
-# README #
+# ProjectAM #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for ###
-
- Quick summary
- Version
-
-### How do I get set up ###
-
- Summary of set up
- Configuration
- Dependencies
- Database configuration
- How to run tests
- Deployment instructions
-
-### Contribution guidelines ###
-
- Writing tests
- Code review
- Other guidelines
+Project Anime Manager, develop with node js and electron.
+This is just a simple project to test the electron and node functions
+in the develop of an app to improve the knowledge in this powerful tools.
 
 ### Who do I talk to ###
 
- Repo owner or admin
- Other community or team contact
+ Repo owner or admin "JScafidi616"
