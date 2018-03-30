@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../SRC/stylesheets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../SRC/stylesheets/main.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../SRC/stylesheets/style.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <body>
 
   <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="showMenu" onclick="clickEvent()">&#9776;</a>
-      <a href="#" class="menuOPtions">&#9899; Fechas</a>
-      <a href="#" class="menuOPtions">&#9899; En Emision</a>
-      <a href="#" class="menuOPtions">&#9899; Mis animes</a>
-      <a href="#" class="menuOPtions">&#9899; Ajustes</a>
+      <!-- <a href="javascript:void(0)" class="showMenu" onclick="clickEvent()">&#9776;</a> -->
+      <a href="#" class="menuOPtions" ><i class="far fa-calendar-alt"></i></a>
+      <a href="#" class="menuOPtions" ><i class="fas fa-sync-alt"></i></a>
+      <a href="#" class="menuOPtions" ><i class="fas fa-sliders-h"></i></a>
+      <a href="#" class="menuOPtions" ><i class="fas fa-cogs"></i></a>
   </div>
 
 <div id="main">
 
-  <div id="title-bar">
+  <!-- <div id="title-bar">
         <div id="title-bar-btns">
               <button id="min-btn">-</button>
               <button id="max-btn">+</button>
               <button id="close-btn">x</button>
         </div>
-  </div>
+  </div> -->
 
   <div id="content">
       <h2>Inicio</h2>
@@ -49,8 +52,8 @@ function openNav() {
 }
 
 function closeNav() {
-  document.getElementById("mySidenav").style.width = "60px";
-  document.getElementById("main").style.marginLeft= "60px";
+  document.getElementById("mySidenav").style.width = "80px";
+  document.getElementById("main").style.marginLeft= "80px";
 }
 </script>
 
