@@ -7,7 +7,8 @@ let win
 
 
 function createWindow(){
-    win = new BrowserWindow ({width: 800, height:600, frame: false})
+    win = new BrowserWindow ({width: 800, height:600, frame: true})
+    win.setMenu(null);
     win.loadURL(url.format({
         pathname: path.join(__dirname, '\\App\\index.html'),
         protocol: 'file',
@@ -15,7 +16,7 @@ function createWindow(){
     }))
     win.webContents.openDevTools()
 
-    console.log("mensaje de consola");
+    console.log("Log console: Corriendo aplicacion");
 }
 
 app.on('ready', createWindow)
