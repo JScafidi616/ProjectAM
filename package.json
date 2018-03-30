@@ -4,7 +4,12 @@
   "description": "Manejo de avisos segun series en emision",
   "main": "main.js",
   "dependencies": {
-    "electron": "^1.7.10"
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-brands": "^5.0.9",
+    "@fortawesome/fontawesome-free-regular": "^5.0.9",
+    "@fortawesome/fontawesome-free-solid": "^5.0.9",
+    "electron": "^1.7.10",
+    "fontawesome": "^4.7.2"
   },
   "devDependencies": {},
   "scripts": {
